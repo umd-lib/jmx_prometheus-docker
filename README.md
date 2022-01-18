@@ -1,6 +1,6 @@
 # jmx_prometheus-docker
 
-Docker image for the JMX to Prometheus exporter HTTP server.
+Docker image for the [Prometheus JMX exporter] HTTP server.
 
 ## Quick Start
 
@@ -44,5 +44,6 @@ configs:
     file: ./jmx_prometheus/activemq.yml
 ```
 
+[Prometheus JMX exporter]: https://github.com/prometheus/jmx_exporter
 [configuration file]: https://github.com/prometheus/jmx_exporter#configuration
 [example configurations]: https://github.com/prometheus/jmx_exporter/tree/master/example_configs
