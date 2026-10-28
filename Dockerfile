@@ -1,5 +1,11 @@
 FROM openjdk:8u312-jdk-bullseye
 
+# remove vulnerable CA certs (see: https://ops.java/emudhra)
+RUN keytool -delete -keystore $JAVA_HOME/jre/lib/security/cacerts -alias "emsignrootcag1 [jdk]" && \
+    keytool -delete -keystore $JAVA_HOME/jre/lib/security/cacerts -alias "emsignrootcag2 [jdk]" && \
+    keytool -delete -keystore $JAVA_HOME/jre/lib/security/cacerts -alias "emsigneccrootcag3 [jdk]" && \
+    keytool -delete -keystore $JAVA_HOME/jre/lib/security/cacerts -alias "comodoaaaca [jdk]"
+
 WORKDIR /opt/jmx_prometheus
 EXPOSE 5556
 
